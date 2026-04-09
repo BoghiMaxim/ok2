@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <rect width="512" height="512" fill="#1C1C1C" rx="80"/>
+  <text x="256" y="300" font-family="Georgia, serif" font-size="200" font-weight="bold" fill="#F5F0E8" text-anchor="middle">M</text>
+  <rect x="80" y="340" width="352" height="3" fill="#C4633A" rx="2"/>
+  <text x="256" y="410" font-family="Arial, sans-serif" font-size="38" fill="#C4633A" text-anchor="middle" letter-spacing="12">STORE</text>
+</svg>

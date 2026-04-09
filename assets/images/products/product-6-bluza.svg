@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="800" viewBox="0 0 600 800">
+  <rect width="600" height="800" fill="#F0EDE8"/>
+  <ellipse cx="300" cy="115" rx="60" ry="70" fill="#D4B896" opacity="0.35"/>
+  <path d="M155 208 Q118 230 112 340 L108 368 Q132 375 155 360 L170 272 L182 208Z" fill="#D4B896" opacity="0.3"/>
+  <path d="M445 208 Q482 230 488 340 L492 368 Q468 375 445 360 L430 272 L418 208Z" fill="#D4B896" opacity="0.3"/>
+  <path d="M182 203 Q300 232 418 203 L406 490 Q300 504 194 490Z" fill="#D4B896" opacity="0.28"/>
+  <circle cx="255" cy="310" r="6" fill="#C4633A" opacity="0.25"/>
+  <circle cx="300" cy="290" r="5" fill="#C4633A" opacity="0.2"/>
+  <circle cx="345" cy="320" r="7" fill="#C4633A" opacity="0.22"/>
+  <circle cx="270" cy="370" r="5" fill="#C4633A" opacity="0.18"/>
+  <circle cx="330" cy="360" r="6" fill="#C4633A" opacity="0.2"/>
+  <text x="300" y="775" font-family="Georgia, serif" font-size="14" fill="#8A8276" text-anchor="middle" letter-spacing="3">BLUZĂ CU BRODERIE</text>
+</svg>

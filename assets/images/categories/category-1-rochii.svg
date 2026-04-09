@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <defs>
+    <linearGradient id="cat1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3D2E24"/>
+      <stop offset="100%" style="stop-color:#8B5E47"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#cat1)"/>
+  <ellipse cx="400" cy="140" rx="80" ry="90" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+  <path d="M245 260 Q400 300 555 260 L535 490 Q400 510 265 490Z" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+  <path d="M265 490 L240 580 Q400 595 560 580 L535 490Z" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+  <circle cx="350" cy="340" r="14" fill="#C4633A" opacity="0.4"/>
+  <circle cx="410" cy="375" r="10" fill="#C4633A" opacity="0.3"/>
+  <circle cx="360" cy="410" r="12" fill="#C4633A" opacity="0.35"/>
+  <text x="60" y="555" font-family="Georgia, serif" font-size="28" font-style="italic" fill="rgba(255,255,255,0.9)" letter-spacing="2">Rochii &amp; Bluze</text>
+  <text x="60" y="582" font-family="Arial, sans-serif" font-size="12" fill="rgba(255,255,255,0.5)" letter-spacing="4">342 PRODUSE</text>
+</svg>

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <defs><linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#1E2E28"/><stop offset="100%" style="stop-color:#3D6B5A"/></linearGradient></defs>
+  <rect width="800" height="600" fill="url(#g)"/>
+  <ellipse cx="400" cy="115" rx="68" ry="76" fill="rgba(255,255,255,0.12)"/>
+  <path d="M235 218 Q400 252 565 218 L552 478 Q400 494 248 478Z" fill="rgba(255,255,255,0.1)"/>
+  <path d="M248 478 L225 570 Q400 585 575 570 L552 478Z" fill="rgba(255,255,255,0.08)"/>
+  <rect x="265" y="360" width="60" height="42" rx="3" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1.2"/>
+  <rect x="475" y="360" width="60" height="42" rx="3" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1.2"/>
+  <text x="40" y="560" font-family="Georgia, serif" font-size="32" font-style="italic" fill="rgba(255,255,255,0.85)">Weekend Ease</text>
+  <text x="40" y="588" font-family="Arial, sans-serif" font-size="11" fill="rgba(255,255,255,0.4)" letter-spacing="5">LOOKBOOK 2026</text>
+</svg>

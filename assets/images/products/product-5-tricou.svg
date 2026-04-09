@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="800" viewBox="0 0 600 800">
+  <rect width="600" height="800" fill="#E8EBF0"/>
+  <ellipse cx="300" cy="115" rx="60" ry="68" fill="#8BA4B5" opacity="0.32"/>
+  <path d="M155 205 Q120 225 115 330 L110 355 Q135 362 155 348 L168 268 L180 205Z" fill="#8BA4B5" opacity="0.28"/>
+  <path d="M445 205 Q480 225 485 330 L490 355 Q465 362 445 348 L432 268 L420 205Z" fill="#8BA4B5" opacity="0.28"/>
+  <path d="M180 200 Q300 228 420 200 L408 495 Q300 508 192 495Z" fill="#8BA4B5" opacity="0.28"/>
+  <text x="300" y="560" font-family="Georgia, serif" font-size="13" fill="#8A8276" text-anchor="middle" letter-spacing="2" opacity="0.5">OVERSIZED</text>
+  <text x="300" y="775" font-family="Georgia, serif" font-size="14" fill="#8A8276" text-anchor="middle" letter-spacing="3">TRICOU PREMIUM OVERSIZED</text>
+</svg>

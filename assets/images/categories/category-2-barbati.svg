@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <defs>
+    <linearGradient id="cat2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2A3040"/>
+      <stop offset="100%" style="stop-color:#3D4A6B"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#cat2)"/>
+  <ellipse cx="400" cy="130" rx="72" ry="82" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+  <path d="M230 240 Q270 262 264 430 L254 455 Q278 462 298 448 L312 368 L324 240Z" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.18)" stroke-width="1"/>
+  <path d="M570 240 Q530 262 536 430 L546 455 Q522 462 502 448 L488 368 L476 240Z" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.18)" stroke-width="1"/>
+  <path d="M324 235 Q400 258 476 235 L468 500 Q400 514 332 500Z" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+  <path d="M340 235 L320 310 L268 285Z" fill="rgba(255,255,255,0.08)"/>
+  <path d="M460 235 L480 310 L532 285Z" fill="rgba(255,255,255,0.08)"/>
+  <path d="M332 500 L318 580 Q400 592 482 580 L468 500Z" fill="rgba(255,255,255,0.08)"/>
+  <text x="60" y="555" font-family="Georgia, serif" font-size="28" font-style="italic" fill="rgba(255,255,255,0.9)" letter-spacing="2">Casual Bărbați</text>
+  <text x="60" y="582" font-family="Arial, sans-serif" font-size="12" fill="rgba(255,255,255,0.5)" letter-spacing="4">218 PRODUSE</text>
+</svg>

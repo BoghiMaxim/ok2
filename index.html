@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MoldaStore — Modă cu Suflet Moldovenesc</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+
+  <!-- ── CUSTOM CURSOR ── -->
+  <div id="cursor"></div>
+  <div id="cursor-ring"></div>
+
+  <!-- ── SCROLL PROGRESS BAR ── -->
+  <div id="scroll-progress"></div>
+
+  <!-- ── SEARCH OVERLAY ── -->
+  <div class="search-overlay" id="searchOverlay">
+    <div class="search-box">
+      <span class="search-label">Caută în colecție</span>
+      <div class="search-input-wrap">
+        <input class="search-input" id="searchInput" type="text" placeholder="Rochii, jachete, pantofi...">
+        <button class="search-close" onclick="closeSearch()">✕</button>
+      </div>
+      <div class="search-suggestions">
+        <p>Căutări populare</p>
+        <div class="search-tags">
+          <span class="search-tag" onclick="setSearch('rochii de vară')">rochii de vară</span>
+          <span class="search-tag" onclick="setSearch('jachete linen')">jachete linen</span>
+          <span class="search-tag" onclick="setSearch('pantaloni casual')">pantaloni casual</span>
+          <span class="search-tag" onclick="setSearch('bluze florale')">bluze florale</span>
+          <span class="search-tag" onclick="setSearch('sandale')">sandale</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── CART DRAWER ── -->
+  <div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="cart-header">
+      <div class="cart-title">Coșul tău</div>
+      <button class="cart-close" onclick="closeCart()">✕</button>
+    </div>
+    <div class="cart-body" id="cartBody">
+      <div class="cart-empty">
+        <div class="cart-empty-icon">🛍</div>
+        <p>Coșul tău este gol.<br>Adaugă produse pentru a începe.</p>
+      </div>
+    </div>
+    <div class="cart-footer">
+      <div class="cart-subtotal">
+        <span class="lbl">Total</span>
+        <span class="amt" id="cartTotal">0 MDL</span>
+      </div>
+      <button class="btn-checkout" onclick="showToast('Redirecționare spre plată...')">
+        Finalizează comanda →
+      </button>
+    </div>
+  </div>
+
+  <!-- ── TOAST NOTIFICATION ── -->
+  <div class="toast" id="toast">
+    <span class="toast-icon">✓</span>
+    <span id="toastMsg">Produs adăugat în coș</span>
+  </div>
+
+  <!-- ── BACK TO TOP ── -->
+  <button id="back-top" onclick="scrollToTop()" title="Sus">↑</button>
+
+  <!-- ════════════════════════════════════
+       NAVIGATION
+  ════════════════════════════════════ -->
+  <nav id="mainNav">
+    <a class="nav-logo" href="#hero">Molda<span>Store</span></a>
+    <ul class="nav-links">
+      <li><a href="#categories">Femei</a></li>
+      <li><a href="#categories">Bărbați</a></li>
+      <li><a href="#lookbook">Lookbook</a></li>
+      <li><a href="#products">Colecții</a></li>
+      <li><a href="#promo" class="nav-sale">Reduceri</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="nav-icon-btn" title="Căutare" onclick="openSearch()">🔍</button>
+      <button class="nav-icon-btn" title="Cont">👤</button>
+      <button class="nav-icon-btn" title="Favorite">♡</button>
+      <button class="btn-cart-nav" onclick="openCart()">
+        Coș
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ════════════════════════════════════
+       HERO
+  ════════════════════════════════════ -->
+  <section class="hero" id="hero">
+    <div class="hero-left">
+      <div class="hero-eyebrow">Colecția Primăvară–Vară 2026</div>
+      <h1 class="hero-title">
+        Stilul tău,<br>
+        <em>cu suflet</em><br>
+        moldovenesc
+      </h1>
+      <p class="hero-sub">Eleganță pentru fiecare zi</p>
+      <p class="hero-desc">
+        Descoperă o selecție atentă de ținute moderne, inspirate din tradiție
+        și croite pentru viața de astăzi. Livrare rapidă în toată Moldova.
+      </p>
+      <div class="hero-cta">
+        <button class="btn-primary" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">
+          Descoperă Colecția
+        </button>
+        <button class="btn-secondary" onclick="document.getElementById('promo').scrollIntoView({behavior:'smooth'})">
+          Vezi Reducerile
+        </button>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><span class="num">2.400+</span><span class="lbl">Produse</span></div>
+        <div class="hero-stat"><span class="num">150+</span><span class="lbl">Branduri</span></div>
+        <div class="hero-stat"><span class="num">24h</span><span class="lbl">Livrare</span></div>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="hero-bg"></div>
+      <div class="geo geo-a"></div>
+      <div class="geo geo-b"></div>
+      <div class="geo geo-c"></div>
+      <div class="hero-badge">
+        <span class="b1">–30%</span>
+        <span class="b2">reducere</span>
+      </div>
+      <div class="hero-mannequin">
+        <svg width="100" height="170" viewBox="0 0 100 170" fill="none">
+          <ellipse cx="50" cy="22" rx="16" ry="20" fill="rgba(255,255,255,0.18)" stroke="rgba(255,255,255,0.35)" stroke-width="0.8"/>
+          <path d="M28 48 Q22 62 18 90 L16 118 Q22 120 28 118 L33 94 L36 48Z" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.2)" stroke-width="0.8"/>
+          <path d="M72 48 Q78 62 82 90 L84 118 Q78 120 72 118 L67 94 L64 48Z" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.2)" stroke-width="0.8"/>
+          <path d="M30 42 Q50 48 70 42 L68 106 Q50 110 32 106Z" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.25)" stroke-width="0.8"/>
+          <path d="M34 106 L30 158 Q50 162 70 158 L66 106Z" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.18)" stroke-width="0.8"/>
+        </svg>
+        <span class="img-lbl">Colecție nouă</span>
+      </div>
+      <div class="hero-float-tag">
+        <div class="t1">Jachetă Linen Premium</div>
+        <div class="t2">850 MDL · Disponibil</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════
+       MARQUEE
+  ════════════════════════════════════ -->
+  <div class="marquee-wrap">
+    <div class="marquee-track">
+      <span class="marquee-item">Livrare gratuită peste 500 MDL <span class="marquee-dot">✦</span></span>
+      <span class="marquee-item">Returnare gratuită 30 de zile <span class="marquee-dot">✦</span></span>
+      <span class="marquee-item">Plată în rate fără dobândă <span class="marquee-dot">✦</span></span>
+      <span class="marquee-item">Colecție nouă în fiecare săptămână <span class="marquee-dot">✦</span></span>
+      <span class="marquee-item">Livrare gratuită peste 500 MDL <span class="marquee-dot">✦</span></span>
+      <span class="marquee-item">Returnare gratuită 30 de zile <span class="marquee-dot">✦</span></span>
+      <span class="marquee-item">Plată în rate fără dobândă <span class="marquee-dot">✦</span></span>
+      <span class="marquee-item">Colecție nouă în fiecare săptămână <span class="marquee-dot">✦</span></span>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════
+       FEATURES STRIP
+  ════════════════════════════════════ -->
+  <div class="features-strip reveal">
+    <div class="feature-item">
+      <span class="feature-icon">🚚</span>
+      <div class="feature-text">
+        <div class="ft">Livrare Rapidă</div>
+        <div class="fs">24–48h în toată Moldova</div>
+      </div>
+    </div>
+    <div class="feature-item">
+      <span class="feature-icon">↩</span>
+      <div class="feature-text">
+        <div class="ft">Returnare Gratuită</div>
+        <div class="fs">30 de zile fără întrebări</div>
+      </div>
+    </div>
+    <div class="feature-item">
+      <span class="feature-icon">🔒</span>
+      <div class="feature-text">
+        <div class="ft">Plată Sigură</div>
+        <div class="fs">SSL & criptare bancară</div>
+      </div>
+    </div>
+    <div class="feature-item">
+      <span class="feature-icon">💬</span>
+      <div class="feature-text">
+        <div class="ft">Suport 7/7</div>
+        <div class="fs">Chat, telefon sau email</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════
+       CATEGORIES
+  ════════════════════════════════════ -->
+  <section class="section reveal" id="categories">
+    <div class="section-header">
+      <h2 class="section-title">Cumpără după categorie</h2>
+      <a href="#" class="section-link">Toate categoriile →</a>
+    </div>
+    <div class="cat-grid">
+      <div class="cat-card">
+        <div class="cat-inner" style="background: linear-gradient(135deg,#3D2E24,#8B5E47); height:100%; width:100%; display:flex; align-items:center; justify-content:center;">
+          <svg width="120" height="180" viewBox="0 0 120 180" opacity="0.2" fill="none">
+            <ellipse cx="60" cy="28" rx="20" ry="24" fill="white"/>
+            <path d="M30 55 Q60 65 90 55 L85 140 Q60 146 35 140Z" fill="white"/>
+            <path d="M36 140 L30 175 Q60 180 90 175 L84 140Z" fill="white"/>
+          </svg>
+        </div>
+        <div class="cat-overlay">
+          <div class="cat-name">Rochii &amp; Bluze</div>
+          <div class="cat-count">342 produse</div>
+        </div>
+        <div class="cat-arrow">↗</div>
+      </div>
+
+      <div class="cat-card">
+        <div class="cat-inner" style="background: linear-gradient(135deg,#2A3040,#3D4A6B); height:100%; width:100%; display:flex; align-items:center; justify-content:center;">
+          <svg width="110" height="170" viewBox="0 0 110 170" opacity="0.2" fill="none">
+            <ellipse cx="55" cy="24" rx="18" ry="22" fill="white"/>
+            <path d="M15 50 Q25 65 22 100 L18 125 Q28 128 35 123 L38 98 L40 50Z" fill="white"/>
+            <path d="M95 50 Q85 65 88 100 L92 125 Q82 128 75 123 L72 98 L70 50Z" fill="white"/>
+            <path d="M40 50 Q55 56 70 50 L68 130 Q55 134 42 130Z" fill="white"/>
+            <path d="M42 130 L38 165 Q55 168 72 165 L68 130Z" fill="white"/>
+          </svg>
+        </div>
+        <div class="cat-overlay">
+          <div class="cat-name">Casual Bărbați</div>
+          <div class="cat-count">218 produse</div>
+        </div>
+        <div class="cat-arrow">↗</div>
+      </div>
+
+      <div class="cat-card">
+        <div class="cat-inner" style="background: linear-gradient(135deg,#1E2E28,#2D4A3E); height:100%; width:100%; display:flex; align-items:center; justify-content:center;">
+          <svg width="100" height="160" viewBox="0 0 100 160" opacity="0.2" fill="none">
+            <ellipse cx="50" cy="22" rx="16" ry="20" fill="white"/>
+            <path d="M28 42 Q50 50 72 42 L68 100 Q50 106 32 100Z" fill="white"/>
+            <rect x="30" y="100" width="16" height="50" rx="3" fill="white"/>
+            <rect x="54" y="100" width="16" height="50" rx="3" fill="white"/>
+          </svg>
+        </div>
+        <div class="cat-overlay">
+          <div class="cat-name">Accesorii &amp; Încălțăminte</div>
+          <div class="cat-count">195 produse</div>
+        </div>
+        <div class="cat-arrow">↗</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════
+       PRODUCTS
+  ════════════════════════════════════ -->
+  <section class="products-section reveal" id="products">
+    <div class="section-header">
+      <h2 class="section-title">Tendințe ale momentului</h2>
+      <a href="#" class="section-link">Vezi toate →</a>
+    </div>
+    <div class="filter-tabs">
+      <button class="filter-tab active" onclick="filterProducts('all', this)">Toate</button>
+      <button class="filter-tab" onclick="filterProducts('femei', this)">Femei</button>
+      <button class="filter-tab" onclick="filterProducts('barbati', this)">Bărbați</button>
+      <button class="filter-tab" onclick="filterProducts('unisex', this)">Unisex</button>
+    </div>
+    <div class="prod-grid" id="prodGrid"></div>
+  </section>
+
+  <!-- ════════════════════════════════════
+       PROMO BANNER
+  ════════════════════════════════════ -->
+  <div id="promo" class="reveal promo-wrapper">
+    <div class="promo-banner">
+      <div class="promo-deco promo-deco-1"></div>
+      <div class="promo-deco promo-deco-2"></div>
+      <div class="promo-left">
+        <div class="promo-eyebrow">Ofertă Limitată</div>
+        <div class="promo-title">Sezonul reducerilor a început în forță</div>
+        <div class="promo-sub">Mii de produse cu prețuri reduse, valabil până pe 30 aprilie 2026</div>
+      </div>
+      <div class="promo-right">
+        <div class="promo-num"><sup>–</sup>30<sup>%</sup></div>
+        <button class="btn-primary btn-terracotta"
+          onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">
+          Profită acum →
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════
+       LOOKBOOK
+  ════════════════════════════════════ -->
+  <section class="lookbook-section reveal" id="lookbook">
+    <div class="section-header">
+      <h2 class="section-title">Lookbook Primăvară 2026</h2>
+      <a href="#" class="section-link">Inspirație →</a>
+    </div>
+    <div class="lookbook-grid">
+      <div class="look-card span-2">
+        <div class="look-inner" style="background: linear-gradient(135deg,#3D2E24,#6B4535,#8B5E47);"></div>
+        <div class="look-label">Urban Chic</div>
+      </div>
+      <div class="look-card">
+        <div class="look-inner" style="background: linear-gradient(160deg,#2A3040,#4A5572);"></div>
+        <div class="look-label">Office Ready</div>
+      </div>
+      <div class="look-card">
+        <div class="look-inner" style="background: linear-gradient(135deg,#1E2E28,#3D6B5A);"></div>
+        <div class="look-label">Weekend Ease</div>
+      </div>
+      <div class="look-card">
+        <div class="look-inner" style="background: linear-gradient(135deg,#2E2A1E,#8B6E3D);"></div>
+        <div class="look-label">Boho Spirit</div>
+      </div>
+      <div class="look-card span-2">
+        <div class="look-inner" style="background: linear-gradient(100deg,#3D1A2E,#8B3D62);"></div>
+        <div class="look-label">Evening Glamour</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════
+       BRANDS
+  ════════════════════════════════════ -->
+  <div class="brands-section reveal">
+    <div class="brands-title">Branduri partenere</div>
+    <div class="brands-row">
+      <span class="brand-item">ZARA</span>
+      <span class="brand-item">MANGO</span>
+      <span class="brand-item">Reserved</span>
+      <span class="brand-item">H&amp;M</span>
+      <span class="brand-item">Massimo Dutti</span>
+      <span class="brand-item">COS</span>
+      <span class="brand-item">Vero Moda</span>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════
+       TESTIMONIALS
+  ════════════════════════════════════ -->
+  <section class="testimonials-section reveal">
+    <div class="section-header">
+      <h2 class="section-title">Ce spun clienții noștri</h2>
+      <a href="#" class="section-link">Toate recenziile →</a>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <div class="testi-text">"Am comandat o rochie pentru o nuntă și a sosit în 24 de ore. Calitatea materialului este excepțională, exact cum arăta în poze."</div>
+        <div class="testi-author">
+          <div class="testi-avatar">AM</div>
+          <div><div class="testi-name">Ana M.</div><div class="testi-loc">Chișinău</div></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <div class="testi-text">"Prețuri accesibile, livrare rapidă și serviciu clienți excelent. Am returnat o piesă fără nicio problemă. Recomand cu drag!"</div>
+        <div class="testi-author">
+          <div class="testi-avatar" style="background:#534AB7;">DL</div>
+          <div><div class="testi-name">Dumitru L.</div><div class="testi-loc">Bălți</div></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★☆</div>
+        <div class="testi-text">"Selecția este uriașă și se actualizează constant. În fine un magazin online moldovenesc cu adevărat profesionist!"</div>
+        <div class="testi-author">
+          <div class="testi-avatar" style="background:#0F6E56;">IC</div>
+          <div><div class="testi-name">Irina C.</div><div class="testi-loc">Cahul</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════
+       NEWSLETTER
+  ════════════════════════════════════ -->
+  <section class="newsletter-section reveal">
+    <h2 class="section-title">Fii primul care află</h2>
+    <p class="newsletter-sub">Abonează-te și primești –10% la prima comandă, plus acces exclusiv la colecțiile noi.</p>
+    <div class="newsletter-form">
+      <input class="newsletter-input" id="emailInput" type="email" placeholder="adresa@email.md">
+      <button class="newsletter-btn" onclick="subscribeNewsletter()">Abonează-mă</button>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════
+       FOOTER
+  ════════════════════════════════════ -->
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <a class="footer-logo" href="#">Molda<span>Store</span></a>
+        <p class="footer-desc">Magazin de modă online cu livrare rapidă în toată Republica Moldova. Calitate, stil și prețuri accesibile pentru fiecare zi.</p>
+        <div class="footer-social">
+          <a href="#" class="social-link">in</a>
+          <a href="#" class="social-link">fb</a>
+          <a href="#" class="social-link">ig</a>
+          <a href="#" class="social-link">tk</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Magazin</h4>
+        <ul>
+          <li><a href="#">Femei</a></li>
+          <li><a href="#">Bărbați</a></li>
+          <li><a href="#">Copii</a></li>
+          <li><a href="#">Accesorii</a></li>
+          <li><a href="#">Colecții Noi</a></li>
+          <li><a href="#">Reduceri</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Ajutor</h4>
+        <ul>
+          <li><a href="#">Livrare &amp; Returnare</a></li>
+          <li><a href="#">Ghid mărimi</a></li>
+          <li><a href="#">Contacte</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Reclamații</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Informații</h4>
+        <ul>
+          <li><a href="#">Despre noi</a></li>
+          <li><a href="#">Cariere</a></li>
+          <li><a href="#">Blog de modă</a></li>
+          <li><a href="#">Termeni &amp; Condiții</a></li>
+          <li><a href="#">Confidențialitate</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 MoldaStore. Toate drepturile rezervate. Chișinău, Republica Moldova.</p>
+      <div class="footer-payments">
+        <span class="pay-badge">Visa</span>
+        <span class="pay-badge">Mastercard</span>
+        <span class="pay-badge">PayNet</span>
+        <span class="pay-badge">Maib</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ── JavaScript ── -->
+  <script src="js/data.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+</html>

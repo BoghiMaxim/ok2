@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="800" viewBox="0 0 600 800">
+  <rect width="600" height="800" fill="#F0EDE8"/>
+  <ellipse cx="300" cy="120" rx="62" ry="72" fill="#C4B89A" opacity="0.38" stroke="#C4B89A" stroke-width="1" stroke-opacity="0.5"/>
+  <!-- Left sleeve -->
+  <path d="M155 215 Q120 240 110 360 L100 390 Q120 400 145 385 L160 300 L175 215Z" fill="#C4B89A" opacity="0.32" stroke="#C4B89A" stroke-width="1" stroke-opacity="0.5"/>
+  <!-- Right sleeve -->
+  <path d="M445 215 Q480 240 490 360 L500 390 Q480 400 455 385 L440 300 L425 215Z" fill="#C4B89A" opacity="0.32" stroke="#C4B89A" stroke-width="1" stroke-opacity="0.5"/>
+  <!-- Body -->
+  <path d="M175 210 Q300 240 425 210 L415 520 Q300 538 185 520Z" fill="#C4B89A" opacity="0.3" stroke="#C4B89A" stroke-width="1" stroke-opacity="0.5"/>
+  <!-- Front zip line -->
+  <line x1="300" y1="215" x2="300" y2="515" stroke="#A89070" stroke-width="2" stroke-opacity="0.4" stroke-dasharray="8,4"/>
+  <!-- Pockets -->
+  <rect x="210" y="390" width="65" height="45" rx="3" fill="none" stroke="#A89070" stroke-width="1.5" stroke-opacity="0.4"/>
+  <rect x="325" y="390" width="65" height="45" rx="3" fill="none" stroke="#A89070" stroke-width="1.5" stroke-opacity="0.4"/>
+  <text x="300" y="775" font-family="Georgia, serif" font-size="14" fill="#8A8276" text-anchor="middle" letter-spacing="3">JACHETĂ PRIMĂVARĂ</text>
+</svg>

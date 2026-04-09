@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="800" viewBox="0 0 600 800">
+  <rect width="600" height="800" fill="#E8EBE8"/>
+  <path d="M195 120 Q300 130 405 120 L415 420 Q300 432 185 420Z" fill="#7A8C7A" opacity="0.28"/>
+  <path d="M185 420 L170 740 Q295 752 300 740 L300 420Z" fill="#7A8C7A" opacity="0.24"/>
+  <path d="M415 420 L430 740 Q305 752 300 740 L300 420Z" fill="#7A8C7A" opacity="0.24"/>
+  <rect x="195" y="120" width="210" height="28" rx="4" fill="#6B7C6B" opacity="0.3"/>
+  <rect x="185" y="200" width="55" height="40" rx="3" fill="none" stroke="#6B7C6B" stroke-width="1.5" stroke-opacity="0.4"/>
+  <rect x="360" y="200" width="55" height="40" rx="3" fill="none" stroke="#6B7C6B" stroke-width="1.5" stroke-opacity="0.4"/>
+  <rect x="185" y="290" width="45" height="65" rx="3" fill="none" stroke="#6B7C6B" stroke-width="1.5" stroke-opacity="0.35"/>
+  <text x="300" y="775" font-family="Georgia, serif" font-size="14" fill="#8A8276" text-anchor="middle" letter-spacing="3">PANTALONI CARGO RELAXED</text>
+</svg>

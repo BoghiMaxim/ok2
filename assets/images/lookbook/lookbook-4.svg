@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <defs><linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#2E2A1E"/><stop offset="100%" style="stop-color:#8B6E3D"/></linearGradient></defs>
+  <rect width="800" height="600" fill="url(#g)"/>
+  <ellipse cx="400" cy="115" rx="70" ry="80" fill="rgba(255,255,255,0.12)"/>
+  <path d="M235 222 Q400 256 565 222 L548 545 Q400 562 252 545Z" fill="rgba(255,255,255,0.1)"/>
+  <circle cx="350" cy="330" r="10" fill="#C4633A" opacity="0.35"/>
+  <circle cx="400" cy="310" r="8" fill="#C4633A" opacity="0.28"/>
+  <circle cx="450" cy="345" r="11" fill="#C4633A" opacity="0.32"/>
+  <circle cx="370" cy="385" r="7" fill="#C4633A" opacity="0.25"/>
+  <text x="40" y="560" font-family="Georgia, serif" font-size="32" font-style="italic" fill="rgba(255,255,255,0.85)">Boho Spirit</text>
+  <text x="40" y="588" font-family="Arial, sans-serif" font-size="11" fill="rgba(255,255,255,0.4)" letter-spacing="5">LOOKBOOK 2026</text>
+</svg>

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <defs><linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#2A3040"/><stop offset="100%" style="stop-color:#4A5572"/></linearGradient></defs>
+  <rect width="800" height="600" fill="url(#g)"/>
+  <ellipse cx="400" cy="115" rx="70" ry="78" fill="rgba(255,255,255,0.12)"/>
+  <path d="M220 220 Q260 245 255 430 L245 455 Q270 462 292 447 L305 358 L320 220Z" fill="rgba(255,255,255,0.1)"/>
+  <path d="M580 220 Q540 245 545 430 L555 455 Q530 462 508 447 L495 358 L480 220Z" fill="rgba(255,255,255,0.1)"/>
+  <path d="M320 215 Q400 240 480 215 L470 505 Q400 518 330 505Z" fill="rgba(255,255,255,0.1)"/>
+  <path d="M338 215 L315 300 L268 278Z" fill="rgba(255,255,255,0.07)"/>
+  <path d="M462 215 L485 300 L532 278Z" fill="rgba(255,255,255,0.07)"/>
+  <text x="40" y="560" font-family="Georgia, serif" font-size="32" font-style="italic" fill="rgba(255,255,255,0.85)">Office Ready</text>
+  <text x="40" y="588" font-family="Arial, sans-serif" font-size="11" fill="rgba(255,255,255,0.4)" letter-spacing="5">LOOKBOOK 2026</text>
+</svg>
