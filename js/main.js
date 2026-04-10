@@ -6,6 +6,13 @@
 /* ══════════════════════════════════════
    CUSTOM CURSOR
 ══════════════════════════════════════ */
+window.addEventListener("scroll", function () {
+    let scrollTop = document.documentElement.scrollTop;
+    let scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    let scrolled = (scrollTop / scrollHeight) * 100;
+
+    document.getElementById("scroll-progress").style.width = scrolled + "%";
+});
 const cursorDot  = document.getElementById('cursor');
 const cursorRing = document.getElementById('cursor-ring');
 
